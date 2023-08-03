@@ -1,7 +1,8 @@
+import API from '@/api/url/index'
 export default {
   data () {
     return {
-      API: window.API,
+      API: API,
       myProject: 123
     }
   }
