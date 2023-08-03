@@ -1,4 +1,4 @@
-const request = require('../plugins/request/index')
+import request from '@/plugins/request'
 
 // Json格式，POST方式，接口调用封装方法
 export async function postApi (url, data) {
