@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     getCode (ele) {
-      console.log(this.API)
       postApi(this.API.umc_getVfcode, {}).then(res => {
         if (res) {
           this.vfCode = process.env.NODE_ENV === 'development' ? '1111' : res.vfCode

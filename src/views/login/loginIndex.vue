@@ -32,6 +32,8 @@
 import SliderCheck from './components/sliderCheck'
 // import { postApi } from '@/api/index'
 import mixiIndex from '@/mixins/index'
+import { mapActions } from 'vuex'
+import CONSTANT from '@/plugins/request/constant'
 export default {
   mixins: [mixiIndex],
   components: {
@@ -45,6 +47,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['login']),
     /**
      * @description 登录
      * 表单校验已有 iView Pro 自动完成，如有需要修改，请阅读 iView Pro 文档
@@ -62,8 +65,8 @@ export default {
           loginName,
           passWord,
           vfCode: this.$refs.sliderCheck.vfCode,
-          loginSource: 'pc-web'
-          // appCode: CONSTANT.APP_CODE
+          loginSource: 'pc-web',
+          appCode: CONSTANT.APP_CODE
         }).then(() => {
           this.submitting = false
           // 重定向对象不存在则返回顶层路径

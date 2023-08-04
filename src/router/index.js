@@ -6,12 +6,12 @@ const routes = [
     path: '/',
     name: 'LoginIndex',
     component: LoginIndex
+  },
+  {
+    path: '/home',
+    name: 'homeIndex',
+    component: () => import('../views/home/homeIndex.vue')
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
 ]
 
 const router = createRouter({
